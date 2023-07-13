@@ -1,0 +1,30 @@
+{
+  "name": "${localWorkspaceFolderBasename}",
+  "image": "mcr.microsoft.com/devcontainers/go:1.20-bullseye",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/krmcbride/devcontainer-features/devtools:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "github.vscode-pull-request-github",
+        "esbenp.prettier-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "donjayamanne.githistory",
+        "eamodio.gitlens"
+      ]
+    }
+  },
+  "workspaceMount": "type=bind,src=${localWorkspaceFolder},dst=/workspace,consistency=cached",
+  "mounts": [
+    "type=bind,src=${localEnv:HOME}/.oh-my-zsh/custom/aliases.zsh,dst=/home/vscode/.oh-my-zsh/custom/aliases.zsh",
+    "type=bind,src=${localEnv:HOME}/.ssh/,dst=/home/vscode/.ssh/",
+    "type=bind,src=${localEnv:HOME}/.config/gh,dst=/home/vscode/.config/gh",
+    "type=bind,src=${localEnv:HOME}/.zsh_history,dst=/home/vscode/.zsh_history"
+  ],
+  "remoteUser": "vscode",
+  "postCreateCommand": ["./.devcontainer/postCreateCommand.sh"]
+}
