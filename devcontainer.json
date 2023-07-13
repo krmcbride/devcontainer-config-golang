@@ -9,7 +9,6 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.vscode-typescript-next",
         "github.vscode-pull-request-github",
         "esbenp.prettier-vscode",
         "streetsidesoftware.code-spell-checker",
